@@ -11,19 +11,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background 0.6s ease;
+    transition: background 0.6s ease; /* Added background transition */
+    padding: 1rem;
 }
 
-/* Card styling */
+/* Card styling with gradient background, shadow, and hover animation */
 .card {
     width: 90%;
     max-width: 500px;
     background-color: rgba(0, 0, 0, 0.8);
     background-image: linear-gradient(160deg, #6a11cb 0%, #2575fc 100%);
     color: #fff;
-    margin: 100px auto 0;
     border-radius: 20px;
-    padding: 40px 35px;
+    padding: 2rem;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -32,14 +32,16 @@ body {
 .card:hover {
     transform: translateY(-15px) scale(1.02);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-/* Search bar styling */
+/* Search bar styling with color changes and hover animations */
 .search {
-    width: 90%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .search input {
@@ -55,6 +57,7 @@ body {
     font-size: 18px;
     transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
 }
 
 .search input:focus {
@@ -68,15 +71,16 @@ body {
     outline: 0;
     background: linear-gradient(90deg, #ff9966 0%, #ff5e62 100%);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
     transition: background 0.4s ease, transform 0.3s ease;
 }
 
 .search button:hover {
     background: linear-gradient(90deg, #ff5f6d 0%, #ffc371 100%);
-    transform: scale(1.1) rotate(10deg);
+    transform: scale(1.1) rotate(10deg); /* Added slight rotation */
+    transition: transform 0.4s ease, background 0.4s ease;
 }
 
 .search button img {
@@ -85,12 +89,13 @@ body {
 }
 
 .search button:hover img {
-    transform: rotate(360deg) scale(1.1);
+    transform: rotate(360deg) scale(1.1); /* Rotate with slight scale */
 }
 
-/* Weather image with animation */
+/* Weather image with subtle animation */
 .weather-img {
-    width: 180px;
+    width: 50%;
+    max-width: 180px;
     margin-top: 20px;
     opacity: 0;
     animation: fadeIn 1.2s forwards, pulse 3s infinite ease-in-out;
@@ -98,7 +103,7 @@ body {
 }
 
 .weather-img:hover {
-    transform: scale(1.1) rotate(-5deg);
+    transform: scale(1.1) rotate(-5deg); /* Added hover effect with rotation */
 }
 
 @keyframes fadeIn {
@@ -124,9 +129,9 @@ body {
     }
 }
 
-/* Weather text animations */
+/* Temperature and city text with slide-in effect */
 .weather h1 {
-    font-size: 70px;
+    font-size: 6vw;
     font-weight: 700;
     opacity: 0;
     animation: slideIn 1.2s forwards 0.3s;
@@ -134,12 +139,12 @@ body {
 }
 
 .weather h1:hover {
-    transform: scale(1.1) translateY(-10px);
+    transform: scale(1.1) translateY(-10px); /* Scale up and translate */
     color: #ff9966;
 }
 
 .weather h2 {
-    font-size: 40px;
+    font-size: 4vw;
     font-weight: 500;
     margin-top: -10px;
     opacity: 0;
@@ -148,7 +153,7 @@ body {
 }
 
 .weather h2:hover {
-    transform: scale(1.1) translateY(-5px);
+    transform: scale(1.1) translateY(-5px); /* Scale up and translate */
     color: #ffc371;
 }
 
@@ -163,10 +168,10 @@ body {
     }
 }
 
-/* Details styling */
+/* Weather details with subtle hover effects */
 .details {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
 }
@@ -176,6 +181,7 @@ body {
     align-items: center;
     text-align: left;
     transition: transform 0.3s ease, color 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 .col:hover {
@@ -194,7 +200,7 @@ body {
 }
 
 .humidity, .wind {
-    font-size: 28px;
+    font-size: 5vw;
     margin-top: -6px;
     transition: transform 0.5s ease;
 }
@@ -203,9 +209,9 @@ body {
     transform: scale(1.1) translateY(-5px);
 }
 
-/* Description and feels-like temperature */
+/* Weather description and feels-like temperature */
 .description, .feels-like {
-    font-size: 22px;
+    font-size: 3vw;
     margin: 10px 0;
     color: #f0f8ff;
     opacity: 0;
@@ -218,12 +224,12 @@ body {
     color: #ff5f6d;
 }
 
-/* Footer */
+/* Footer styling with subtle hover effect */
 footer {
     text-align: center;
     margin-top: 50px;
     color: #f0f8ff;
-    font-size: 14px;
+    font-size: 3vw;
     transition: color 0.3s ease;
 }
 
@@ -235,104 +241,69 @@ footer a {
 
 footer a:hover {
     color: #ff9966;
-    transform: scale(1.1);
+    transform: scale(1.1); /* Added subtle scaling */
 }
 
-/* Responsive styling for mobile devices */
-@media (max-width: 768px) {
-    .card {
-        padding: 30px 25px;
-    }
+/* Media Queries for Different Screen Sizes */
 
+/* For tablets and small desktops */
+@media only screen and (max-width: 768px) {
+    .card {
+        max-width: 90%;
+        padding: 2rem 1.5rem;
+    }
+    
     .weather h1 {
-        font-size: 50px;
+        font-size: 8vw;
     }
 
     .weather h2 {
-        font-size: 30px;
+        font-size: 5vw;
     }
-
+    
     .humidity, .wind {
-        font-size: 24px;
+        font-size: 6vw;
     }
 
     .description, .feels-like {
-        font-size: 18px;
-    }
-
-    .weather-img {
-        width: 150px;
+        font-size: 4vw;
     }
 }
-@media (max-width: 480px) {
+
+/* For mobile devices */
+@media only screen and (max-width: 480px) {
     .card {
-        padding: 10px 5px 10px 5px ;
-        max-width: 100%;
+        max-width: 95%;
+        padding: 1.5rem 1rem;
     }
-
-    .weather h1 {
-        font-size: 40px;
-    }
-
-    .weather h2 {
-        font-size: 24px;
-    }
-
-    .humidity, .wind {
-        font-size: 20px;
-    }
-
-    .description, .feels-like {
+    
+    .search input {
         font-size: 16px;
+        height: 45px;
     }
-
-    .weather-img {
-        width: 130px;
-    }
-
-    /* Responsive adjustments for search button */
+    
     .search button {
         width: 45px;
         height: 45px;
     }
 
-    .search button img {
-        width: 16px;
-    }
-}
-
-@media (max-width: 320px) {
-    .card {
-        padding: 15px;
-    }
-
     .weather h1 {
-        font-size: 32px;
+        font-size: 10vw;
     }
 
     .weather h2 {
-        font-size: 20px;
+        font-size: 6vw;
     }
-
+    
     .humidity, .wind {
-        font-size: 18px;
+        font-size: 7vw;
     }
 
     .description, .feels-like {
-        font-size: 14px;
+        font-size: 5vw;
     }
-
-    .weather-img {
-        width: 120px;
+    
+    footer {
+        font-size: 4vw;
     }
-
-    /* Further adjustments for smaller search button */
-    .search button {
-        width: 40px;
-        height: 40px;
-    }
-
-    .search button img {
-        width: 14px;
-    }
-}
+} 

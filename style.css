@@ -36,7 +36,7 @@ body {
 
 /* Search bar styling */
 .search {
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,8 +68,8 @@ body {
     outline: 0;
     background: linear-gradient(90deg, #ff9966 0%, #ff5e62 100%);
     border-radius: 50%;
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     transition: background 0.4s ease, transform 0.3s ease;
 }
@@ -264,7 +264,6 @@ footer a:hover {
         width: 150px;
     }
 }
-
 @media (max-width: 480px) {
     .card {
         padding: 20px;
@@ -290,9 +289,18 @@ footer a:hover {
     .weather-img {
         width: 130px;
     }
+
+    /* Responsive adjustments for search button */
+    .search button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .search button img {
+        width: 16px;
+    }
 }
 
-/* Additional smaller device responsiveness */
 @media (max-width: 320px) {
     .card {
         padding: 15px;
@@ -316,5 +324,15 @@ footer a:hover {
 
     .weather-img {
         width: 120px;
+    }
+
+    /* Further adjustments for smaller search button */
+    .search button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .search button img {
+        width: 14px;
     }
 }

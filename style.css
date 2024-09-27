@@ -238,7 +238,7 @@ footer a:hover {
     transform: scale(1.1);
 }
 
-/* Responsive styling */
+/* Responsive styling for mobile devices */
 @media (max-width: 768px) {
     .card {
         padding: 30px 25px;
@@ -289,5 +289,32 @@ footer a:hover {
 
     .weather-img {
         width: 130px;
+    }
+}
+
+/* Additional smaller device responsiveness */
+@media (max-width: 320px) {
+    .card {
+        padding: 15px;
+    }
+
+    .weather h1 {
+        font-size: 32px;
+    }
+
+    .weather h2 {
+        font-size: 20px;
+    }
+
+    .humidity, .wind {
+        font-size: 18px;
+    }
+
+    .description, .feels-like {
+        font-size: 14px;
+    }
+
+    .weather-img {
+        width: 120px;
     }
 }
